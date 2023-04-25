@@ -65,7 +65,6 @@ runs:
 
     - name: Install OpenVPN
       run: |
-        sudo apt update
         sudo apt --assume-yes --no-install-recommends install openvpn oathtool resolvconf
       shell: bash
 
@@ -116,7 +115,7 @@ runs:
 
     - name: Show VPN log
       uses: webiny/action-post-run@3.0.0
-      if: always() && (inputs.logs == true)
+      if: inputs.logs == true
       with:
         run: sudo cat vpn.log
 
