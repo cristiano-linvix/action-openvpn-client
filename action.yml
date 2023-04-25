@@ -92,6 +92,7 @@ runs:
       
     - name: Show VPN log
       run: sudo cat vpn.log
+      shell: bash
 
     - name: Update DNS server
       if: (inputs.dns-server != null)
